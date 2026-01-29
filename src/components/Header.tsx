@@ -1,4 +1,4 @@
-import useTheme from "../custom/useTheme"
+import { useTheme } from "../custom/ThemeProvider"
 import menuSvg from "./../assets/menu.svg"
 import menuLightSvg from "./../assets/menu-light.svg"
 import darkSvg from "./../assets/dark.svg"
