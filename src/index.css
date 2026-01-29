@@ -21,7 +21,11 @@
 
     --breakpoint-xs : 360px;
     --breakpoint-sm : 460px;
-    --breakpoint-md : 640px;
+    --breakpoint-md : 700px;
     --breakpoint-lg : 1024px;
     --breakpoint-xl : 1280px
+}
+
+.nav-link {
+    @apply font-albert font-normal hover:underline cursor-pointer;
 }
