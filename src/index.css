@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Itim&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --font-inter : "Inter", sans-serif;
+    --font-itim : "Itim", cursive;
+    --font-crimson : "Crimson Text", serif;
+    --font-albert : "Albert Sans", sans-serif;
+    --font-istok : "Istok", sans-serif;
+
+    --color-bg-dark : #010403;
+    --color-text-dark : #F1F8F7;
+    --color-primary-dark : #18E2A5;
+    --color-secondary-dark : #226D56;
+    --color-accent : #2F37D0;
+    --color-bg-light : #FBFEFD;
+    --color-text-light : #070E0D;
+    --color-primary-light : #1DE7AB;
+    --color-secondary-light : #92DDC6;
+
+    --breakpoint-xs : 360px;
+    --breakpoint-sm : 460px;
+    --breakpoint-md : 640px;
+    --breakpoint-lg : 1024px;
+    --breakpoint-xl : 1280px
+}
