@@ -20,9 +20,7 @@ export default function Content()
             return
         }
 
-        const timeline = gsap.timeline({
-            delay : 1
-        })
+        const timeline = gsap.timeline()
 
         const split = new SplitText("#intro-heading", {
             type : "words"
