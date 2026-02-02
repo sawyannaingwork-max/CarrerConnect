@@ -4,6 +4,7 @@ import Home from "./components/Home"
 import ThemeProvider from "./custom/ThemeProvider"
 import CountryProvider from "./custom/CountryProvider"
 import SavedListProvider from "./custom/SavedListProvider"
+import JobDetail from "./components/JobDetail"
 
 
 export default function App()
@@ -15,6 +16,7 @@ export default function App()
         <SavedListProvider>
           <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/job/:id" element={<JobDetail />} />
         </Routes>
         </SavedListProvider>
       </CountryProvider>

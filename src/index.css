@@ -55,3 +55,7 @@
     @apply flex gap-1 font-itim text-bg-dark transition-[gap] bg-primary-dark px-2 py-1 rounded-md w-full justify-center shadow-md shadow-gray-400 cursor-pointer hover:gap-4 duration-75 lg:w-40 mt-4
 }
 
+.btn 
+{
+    @apply bg-primary-dark px-2 py-1 rounded-sm shadow-sm shadow-transparent hover:shadow-gray-400 cursor-pointer text-bg-dark font-itim duration-300 mr-2
+}

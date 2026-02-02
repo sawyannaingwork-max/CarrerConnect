@@ -1,14 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import type { JobSearchResponse } from "../type";
 
-export default function useJSearch(key : any[], url : string)
+export default function useJSearch<T>(key : any[], url : string)
 {
-    console.log("Run")
-    const { data, isFetching, refetch, isError } = useQuery<JobSearchResponse>({
+    const { data, isFetching, refetch, isError } = useQuery<T>({
         queryKey : key,
         queryFn : async function()
         {
-            console.log("Getting Executed")
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -31,7 +28,7 @@ export default function useJSearch(key : any[], url : string)
         retry : false,
         refetchOnWindowFocus : false,
         refetchOnReconnect : false,
-        placeholderData : (prev) => prev
+        placeholderData : (prev) => prev 
     })
 
     return { data, isFetching, refetch, isError}

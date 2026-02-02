@@ -52,8 +52,13 @@ interface EmployerReview {
 }
 
 // Type for job Detail
-export interface JobDetail extends Job {
+interface JobDetailType extends Job {
     employer_reviews? : EmployerReview[]
+}
+
+// Type for job Detail response
+export interface JobDetailResponse {
+    data : [JobDetailType]
 }
 
 // Type for job search form 
