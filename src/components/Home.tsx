@@ -6,6 +6,7 @@ import type { JobSearchType } from "./../type"
 import useJSearch from "../custom/useJSearch";
 import JobList from "../home/JobList";
 
+
 export default function Home()
 {
     const [isDark, _] = useTheme()

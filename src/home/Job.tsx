@@ -1,9 +1,12 @@
 import { useSavedJob } from "../custom/SavedListProvider";
 import { useTheme } from "../custom/ThemeProvider";
 import type { Job } from "../type";
+import { useNavigate } from "react-router";
 
 export default function Job(props : Job)
 {
+    const navigate = useNavigate()
+
     const [isDark] = useTheme()
     const [savedList, handleSave, handleUnsave] = useSavedJob()
 
@@ -11,7 +14,7 @@ export default function Job(props : Job)
     const isSaved : boolean = savedList.some((job) => job.job_id === props.job_id)
 
     return(
-        <div className={`p-3 rounded-md shadow-md shadow-gray-400 {isDark? "bg-bg-dark" : "bg-bg-light"}`}>
+        <div onClick={() => navigate(`/job/${props.job_id}`)} className={`cursor-pointer hover:scale-[1.04] duration-150 p-3 rounded-md shadow-md shadow-gray-400 {isDark? "bg-bg-dark" : "bg-bg-light"}`}>
             <div className="flex justify-between items-center">
                 <h2 className="font-albert text-xl">{props.job_title}</h2>
                 <p className={`text-text-dark py-1 px-2 text-center ${isDark? "bg-secondary-dark" : "bg-accent"}`}>
