@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTheme } from "../custom/ThemeProvider";
 import Content from "../home/Content";
 import Form from "../home/Form";
@@ -6,18 +5,15 @@ import type { JobSearchResponse, JobSearchType} from "./../type"
 import useJSearch from "../custom/useJSearch";
 import JobList from "../home/JobList";
 
+// Type for home props
+interface HomeProps {
+    inputs : JobSearchType,
+    setInputs : React.Dispatch<React.SetStateAction<JobSearchType>>
+}
 
-export default function Home()
+export default function Home({inputs, setInputs} : HomeProps)
 {
     const [isDark, _] = useTheme()
-
-    // State for form input value
-    const [inputs, setInputs] = useState<JobSearchType>({
-        query : "",
-        country : "us",
-        date : "all",
-        requirements : ""
-    })
 
     let url : string
 
