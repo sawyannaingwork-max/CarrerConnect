@@ -35,9 +35,13 @@ export default function Job(props : Job)
             {
                 isSaved? 
 
-                <button onClick={() => handleUnsave(props.job_id)} className="bg-red-400 px-2 py-1 rounded-md font-itim shadow-sm shadow-gray-400 cursor-pointer hover:shadow-md text-text-dark">Remove</button> : 
+                <button onClick={(e) => {
+                   e.stopPropagation()
+                   handleUnsave(props.job_id) 
+                }} className="bg-red-400 px-2 py-1 rounded-md font-itim shadow-sm shadow-gray-400 cursor-pointer hover:shadow-md text-text-dark">Remove</button> : 
 
-                <button onClick={() => {
+                <button onClick={(e) => {
+                    e.stopPropagation()
                     handleSave({
                         job_id : props.job_id,
                         job_title : props.job_title,
