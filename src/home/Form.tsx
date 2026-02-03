@@ -7,7 +7,6 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import type { QueryObserverResult } from "@tanstack/react-query";
 
-
 export default function Form({inputs, handleChange, refetch} : {inputs : JobSearchType, handleChange : (e : React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void, refetch :() => Promise<QueryObserverResult<JobSearchResponse, Error>>
 })
 {   

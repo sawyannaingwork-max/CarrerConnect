@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTheme } from "../custom/ThemeProvider";
 import Content from "../home/Content";
 import Form from "../home/Form";
-import type { JobSearchType } from "./../type"
+import type { JobSearchResponse, JobSearchType} from "./../type"
 import useJSearch from "../custom/useJSearch";
 import JobList from "../home/JobList";
 
@@ -31,7 +31,7 @@ export default function Home()
         url = `https://jsearch.p.rapidapi.com/search?query=${inputs.query}&page=1&num_pages=1&country=${inputs.country}&date_posted=${inputs.date}`
     }
 
-    const { data, isFetching, isError, refetch } = useJSearch(["Job Search", inputs.query, inputs.country, inputs.date, inputs.requirements], url)
+    const { data, isFetching, isError, refetch } = useJSearch<JobSearchResponse>(["Job Search", inputs.query, inputs.country, inputs.date, inputs.requirements], url)
 
     //Function for handling changes in form
     function handleChange(e : React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)
