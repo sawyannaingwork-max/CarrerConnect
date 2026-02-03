@@ -4,6 +4,7 @@ import menuLightSvg from "./../assets/menu-light.svg"
 import darkSvg from "./../assets/dark.svg"
 import lightSvg from "./../assets/light.svg"
 import { useRef, useState } from "react"
+import { NavLink } from "react-router"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { SplitText } from "gsap/all"
@@ -69,16 +70,27 @@ export default function Header()
             <nav className={`${isOpen? "h-30 px-5 py-5" : "h-0"} md:h-auto duration-300 ease-linear overflow-hidden md:relative md:left-auto md:top-auto md:w-auto md:bg-none absolute top-full left-0 w-full bg-inherit`}>
                 <ul className="md:flex gap-5 text-center">
                     <li>
-                        <a onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Home</a>
+                        <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/">
+                            Home
+                        </NavLink>
                     </li>
+                
                     <li>
-                        <a onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Job Salary</a>
+                        <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/">
+                            Job Salary
+                        </NavLink>
                     </li>
+                    
                     <li>
-                        <a onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Company Salary</a>
+                        <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/">
+                            Company Salary
+                        </NavLink>
                     </li>
+                    
                     <li>
-                        <a  onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Saved</a>
+                        <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/saved">
+                            Saved
+                        </NavLink>
                     </li>
 
                 </ul>

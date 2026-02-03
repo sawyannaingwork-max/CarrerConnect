@@ -12,21 +12,21 @@ import type { JobSearchType } from "./type"
 export default function App()
 {
   // State for form input value
-      const [inputs, setInputs] = useState<JobSearchType>({
-          query : "",
-          country : "us",
-          date : "all",
-          requirements : ""
-      })
+    const [inputs, setInputs] = useState<JobSearchType>({
+        query : "",
+        country : "us",
+        date : "all",
+        requirements : ""
+    })
   return (
     <ThemeProvider>
       <Header />
       <CountryProvider>
         <SavedListProvider>
           <Routes>
-          <Route path="/" element={<Home inputs={inputs} setInputs={setInputs} />} />
-          <Route path="/job/:id" element={<JobDetail />} />
-          <Route path="/saved" element={<Saved />} />
+            <Route path="/" element={<Home inputs={inputs} setInputs={setInputs} />} />
+            <Route path="/job/:id" element={<JobDetail />} />
+            <Route path="/saved" element={<Saved />} />
         </Routes>
         </SavedListProvider>
       </CountryProvider>
