@@ -77,6 +77,9 @@ export default function Header()
                     <li>
                         <a onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Company Salary</a>
                     </li>
+                    <li>
+                        <a  onClick={() => setIsOpen(false)} className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} href="#">Saved</a>
+                    </li>
 
                 </ul>
             </nav>
