@@ -16,7 +16,9 @@ export default function useJSearch<T>(key : any[], url : string)
 
             if (!response.ok)
             {
+                console.log(response)
                 throw new Error("Fetching Fail")
+                
             }
 
             const result = await response.json()

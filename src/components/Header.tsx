@@ -82,12 +82,6 @@ export default function Header()
                     </li>
                     
                     <li>
-                        <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/">
-                            Company Salary
-                        </NavLink>
-                    </li>
-                    
-                    <li>
                         <NavLink className={`${isDark? "text-primary-dark" : "text-accent"} nav-link`} onClick={() => setIsOpen(false)} to="/saved">
                             Saved
                         </NavLink>

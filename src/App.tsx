@@ -7,7 +7,8 @@ import SavedListProvider from "./custom/SavedListProvider"
 import JobDetail from "./components/JobDetail"
 import Saved from "./components/Saved"
 import { useState } from "react"
-import type { JobSearchType } from "./type"
+import type { JobSearchType, SalaryForm} from "./type"
+import SalarySearch from "./components/SalarySearch"
 
 export default function App()
 {
@@ -18,6 +19,14 @@ export default function App()
         date : "all",
         requirements : ""
     })
+
+  // State for salary search input
+  const [salarySearchInput, setSalarySearchInput] = useState<SalaryForm>({
+    job : "",
+    location : "",
+    experience : "ALL"
+  })
+  
   return (
     <ThemeProvider>
       <Header />
@@ -27,6 +36,7 @@ export default function App()
             <Route path="/" element={<Home inputs={inputs} setInputs={setInputs} />} />
             <Route path="/job/:id" element={<JobDetail />} />
             <Route path="/saved" element={<Saved />} />
+            <Route path="/salary" element={<SalarySearch salarySearchInput={salarySearchInput} setSalarySearchInput={setSalarySearchInput} />} />
         </Routes>
         </SavedListProvider>
       </CountryProvider>

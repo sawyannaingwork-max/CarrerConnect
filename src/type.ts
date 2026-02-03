@@ -94,3 +94,31 @@ export interface SavedJob {
     job_posted_at : string | null,
     job_employment_type : string,
 }
+
+// Type for salary Search
+export interface SalaryForm {
+    job : string,
+    location : string,
+    experience : string
+}
+
+export interface JobSalary {
+    job_title : string,
+    min_salary : number,
+    max_salary : number,
+    median_salary : number,
+    min_base_salary: number,
+    max_base_salary: number
+    median_base_salary: number,
+    min_additional_pay: number,
+    max_additional_pay: number,
+    median_additional_pay: number,
+    salary_period: string,
+    salary_currency: string,
+    publisher_name : string,
+    publisher_link : string
+}
+
+export interface JobSalarySearchResponse {
+    data : [JobSalary]
+}
