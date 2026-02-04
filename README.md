@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Carrer Connect
+  It helps users to find list of jobs posted on many platoform just in one place.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Why I built this project
+  As I was looking for job, I have to use different platform like linkedin, jobdb and so on. So I think it will be cool if there is a product that I can search job listing posted on all platform.
 
-Currently, two official plugins are available:
+## Tech Stack
+1. React
+2. TypeScript
+3. Tailwind
+4. React Router
+5. GSAP
+6. React Query
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+### Home Page
+  It is where user can search job listing. User can input 4 things.
+  1. Job Title
+  2. Country
+  3. Requirements (optional)
+  4. Date
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  It will show 10 matching jobs for user search. User can save those job to view it later or remove it from saved.
+  Clicking on each job will take user to job Detail page.
 
-## Expanding the ESLint configuration
+### Job Detail Page
+  This shows the detail of a specific job.
+  1. Employer Info
+  2. Job Title
+  3. Job Description
+  4. Job Qualification
+  5. Job Location
+  6. Apply Link 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Job Salary Page
+  This page allows user to search salary of a job at a specific location. User can input 3 thinngs.
+  1. Job Title
+  2. Location
+  3. Experience(optional default will be ALL)
+  This will show 
+  1. Job Title
+  2. Salary Currency
+  3. Minimum Salary
+  4. Maximum Salary
+  5. Minimum Additional Pay
+  6. Maximum Additional Pay
+  7. Salary Period
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Saved Page
+  This Page show list of job that user had saved.
