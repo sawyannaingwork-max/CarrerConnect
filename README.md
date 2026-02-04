@@ -1,6 +1,8 @@
 # Carrer Connect
   It helps users to find list of jobs posted on many platoform just in one place.
 
+  [Live Preview Here] (https://carrer-connect-three.vercel.app/)
+
 # Why I built this project
   As I was looking for job, I have to use different platform like linkedin, jobdb and so on. So I think it will be cool if there is a product that I can search job listing posted on all platform.
 
@@ -49,3 +51,23 @@
 
 ### Saved Page
   This Page show list of job that user had saved.
+
+
+## Things I learnt from this project 
+
+1. How powerful the react query is.
+2. How to add dark and light theme.
+3. When to use state and when to use context.
+4. How I should start a project. 
+
+## Harderst Problem I ever faced in this project.
+  My components are re mounted every time I switch tab and I don't know why. So I debug and ask AI why it is happening, eventually I found out that useQuery refetch every time window refocus. And I am using that inside my countryProvider that wrap the entier app. So every time window refocus, the components are remounted again. 
+  The fix is to add refetchOnWindowFocus : false.
+
+### Overall Reflection on myself for this project.
+
+  I don't feel proud or great for this project as I realized while writting the project, it can be much better from naming variable to architecutring. I don't really think anything when starting this project so it becomes a mess quickly. I was writing and deleteing and chaging constantly. So from now on I should do the follwing thing before starting a project.
+
+  1. Designing (So I can think of how to build the product efficiently from custom hook to reusable component.)
+  2. Testing API multiple times (So i can now which to expect from the response)
+  3. Deciding where to use context and state.
