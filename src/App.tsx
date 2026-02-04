@@ -1,15 +1,18 @@
 import Header from "./components/Header"
 import { Route, Routes } from "react-router"
-import Home from "./components/Home"
 import ThemeProvider from "./custom/ThemeProvider"
 import CountryProvider from "./custom/CountryProvider"
 import SavedListProvider from "./custom/SavedListProvider"
-import JobDetail from "./components/JobDetail"
-import Saved from "./components/Saved"
 import { useState } from "react"
 import type { JobSearchType, SalaryForm} from "./type"
-import SalarySearch from "./components/SalarySearch"
 
+import { Suspense, lazy } from "react"
+import Loader from "./components/Loader"
+
+const Home = lazy(() => import("./components/Home"))
+const Saved = lazy(() => import("./components/Saved"))
+const SalarySearch = lazy(() => import("./components/SalarySearch"))
+const JobDetail = lazy(() => import("./components/JobDetail"))
 export default function App()
 {
   // State for form input value
@@ -32,12 +35,14 @@ export default function App()
       <Header />
       <CountryProvider>
         <SavedListProvider>
+          <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home inputs={inputs} setInputs={setInputs} />} />
             <Route path="/job/:id" element={<JobDetail />} />
             <Route path="/saved" element={<Saved />} />
             <Route path="/salary" element={<SalarySearch salarySearchInput={salarySearchInput} setSalarySearchInput={setSalarySearchInput} />} />
-        </Routes>
+          </Routes>
+        </Suspense>
         </SavedListProvider>
       </CountryProvider>
     </ThemeProvider>
