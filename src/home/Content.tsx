@@ -34,7 +34,8 @@ export default function Content()
 
         timeline.from("#animate-text", {
             opacity : 0,
-            y : 20
+            y : 20,
+            duration : 0.3
         })
 
         timeline.from("#animate-img", {

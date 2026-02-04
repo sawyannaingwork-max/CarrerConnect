@@ -33,7 +33,7 @@ export default function Form({inputs, handleChange, refetch} : {inputs : JobSear
         }
 
         const timeline = gsap.timeline({
-            delay : 3
+            delay : 1
         })
 
         timeline.from(".form-wrapper", {
@@ -41,13 +41,13 @@ export default function Form({inputs, handleChange, refetch} : {inputs : JobSear
             y : -20,
             ease : "sine",
             stagger : {
-                each : 0.5,
+                each : 0.2,
             }
         })
 
         timeline.from(".search-btn", {
             opacity : 0,
-            duration : 0.6,
+            duration : 0.5,
             ease : "sine"
         })
 
