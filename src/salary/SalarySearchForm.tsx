@@ -1,8 +1,12 @@
 import { useTheme } from "../custom/ThemeProvider";
 import type { JobSalarySearchResponse, SalaryForm } from "../type";
 import type { QueryObserverResult } from "@tanstack/react-query";
-
 import searchIcon from "./../assets/search.svg"
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
 // Type for SalarySearchForm Props
 interface SalarySearchFormProps {
     salarySearchInput : SalaryForm,
@@ -15,6 +19,8 @@ export default function SalarySearchForm({salarySearchInput, setSalarySearchInpu
 
     const [isDark] = useTheme()
 
+    const elementRef = useRef<HTMLFormElement | null>(null)
+
     // Function for handling changes
     function handleChange(e : React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)
     {
@@ -26,13 +32,40 @@ export default function SalarySearchForm({salarySearchInput, setSalarySearchInpu
             [name] : value
         })
     }
+
     const experiences = ["ALL", "LESS_THAN_ONE", "ONE_TO_THREE", "FOUR_TO_SIX", "SEVEN_TO_NINE", "TEN_TO_FOURTEEN", "ABOVE_FIFTEEN"]
 
+    useGSAP(() => {
+        if (!elementRef.current)
+        {
+            return 
+        }
+
+        // Creating timelnine
+        const timeline = gsap.timeline()
+
+        timeline.from(".form-wrapper", {
+            opacity : 0,
+            y : -20,
+            stagger : 0.2,
+            ease : "sine"
+        })
+
+        timeline.from(".search-btn", {
+            opacity : 0,
+            duration : 0.5,
+            ease : "sine"
+        })
+
+        return(() => {
+            timeline.kill()
+        })
+    }, { scope : elementRef, dependencies : []})
     return(
         <form onSubmit={(e) => {
             e.preventDefault()
             refetch()
-        }} className="w-[90%] mx-auto ">
+        }} className="w-[90%] mx-auto " ref={elementRef}>
             <div className="lg:flex gap-5 justify-between flex-wrap">
                 <div className="form-wrapper">
                     <label htmlFor="#">Job Title</label>

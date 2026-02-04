@@ -59,3 +59,13 @@
 {
     @apply bg-primary-dark px-2 py-1 rounded-sm shadow-sm shadow-transparent hover:shadow-gray-400 cursor-pointer text-bg-dark font-itim duration-300 mr-2
 }
+
+table tr td 
+{
+    @apply px-2 py-1 border
+}
+
+tr td:nth-child(2)
+{
+    @apply font-albert 
+}
