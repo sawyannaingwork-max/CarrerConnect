@@ -64,6 +64,11 @@ export default function SalarySearchForm({salarySearchInput, setSalarySearchInpu
     return(
         <form onSubmit={(e) => {
             e.preventDefault()
+
+            if (!salarySearchInput.job || !salarySearchInput.location)
+            {
+                return
+            }
             refetch()
         }} className="w-[90%] mx-auto " ref={elementRef}>
             <div className="lg:flex gap-5 justify-between flex-wrap">

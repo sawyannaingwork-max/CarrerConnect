@@ -22,6 +22,11 @@ export default function Form({inputs, handleChange, refetch} : {inputs : JobSear
     {
         e.preventDefault()
 
+        if (!inputs.query)
+        {
+            return
+        }
+
         // Fetching the data
         refetch()
     }   
