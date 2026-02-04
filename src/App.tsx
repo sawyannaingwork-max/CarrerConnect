@@ -8,6 +8,7 @@ import type { JobSearchType, SalaryForm} from "./type"
 
 import { Suspense, lazy } from "react"
 import Loader from "./components/Loader"
+import ErrorBoundary from "./components/ErrorBoundary"
 
 const Home = lazy(() => import("./components/Home"))
 const Saved = lazy(() => import("./components/Saved"))
@@ -31,7 +32,8 @@ export default function App()
   })
   
   return (
-    <ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
       <Header />
       <CountryProvider>
         <SavedListProvider>
@@ -46,5 +48,6 @@ export default function App()
         </SavedListProvider>
       </CountryProvider>
     </ThemeProvider>
+    </ErrorBoundary>
   )
 }
